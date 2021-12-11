@@ -8,10 +8,6 @@
         margin-bottom: $gutter-vertical;
     }
 
-    /*& > * {
-        background-color: red;
-    }*/
-
     .col-1-of-2 {
         //flex-basis: calc((100% - #{$gutter-horizontal}) / 2);
         flex: 1;

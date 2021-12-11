@@ -1,0 +1,69 @@
+.card {
+    // Functionality
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 50rem;
+
+    &__side {
+        color: black;
+        font-size: 2rem;
+        height: 50rem;
+        transition: all .8s ease;
+        width: 100%;
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+        overflow: hidden;
+
+        &--front {
+            background-color: $color-white;
+        }
+
+        &--back {
+            background-color: rgb(0, 145, 145);
+            transform: rotateY(-180deg);
+
+            &-1 {
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+            }
+        }
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0deg);
+    }
+
+    // FRONT SIDE STYLING
+    &__picture {
+        background-size: cover;
+        background-blend-mode: screen;
+        height: 23rem;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+        &--1 {
+            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5.jpg);
+        }
+
+        &--2 {
+            background-image: url(../img/nat-5.jpg);
+        }
+
+        &--3 {
+            background-image: url(../img/nat-5.jpg);
+        }
+    }
+
+    &__heading {
+        //font-size: ;
+    }
+}
